@@ -1,0 +1,71 @@
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+table {
+  width: 100%;
+}
+
+.na-tabele
+{
+  height: 450px;
+  overflow: auto;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.example-container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+.example-container .mat-form-field {
+  width: 10%;
+}
+
+.example-container form {
+  margin-bottom: 20px;
+}
+
+.example-container {
+  margin-top: 10px;
+}
+
+.example-container form > * {
+  margin: 5px 0;
+}
+
+.example-container .mat-radio-button {
+  margin: 0 12px;
+}
+
+.przycisk-dodaj {
+  width: 250px;
+  background-color: #4CAF50;
+  margin-right: 10px;
+}
+
+.przycisk-usun {
+  width: 250px;
+  background-color: #E74C3C;
+  margin: 0px 10px;
+}
+
+.przycisk-edytuj {
+  width: 250px;
+  background-color: #2980B9;
+  margin: 0px 10px;
+}
+
+.przycisk-resetuj {
+  width: 250px;
+  background-color: #000000;
+  margin: 0px 10px;
+}

@@ -1,0 +1,9 @@
+com\javatechie\spring\auth\example\Baza_uzytkowe.class
+com\javatechie\spring\auth\example\User.class
+com\javatechie\spring\auth\example\Dane_restauracja.class
+com\javatechie\spring\auth\example\WebConfig.class
+com\javatechie\spring\auth\example\UserServiceApplication.class
+com\javatechie\spring\auth\example\Dane_pracownicy.class
+com\javatechie\spring\auth\example\Baza_kontrola.class
+com\javatechie\spring\auth\example\Dane_rejestracja.class
+com\javatechie\spring\auth\example\SecurityConfig.class

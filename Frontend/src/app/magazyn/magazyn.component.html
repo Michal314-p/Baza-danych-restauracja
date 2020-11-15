@@ -1,0 +1,89 @@
+<div fxLayoutAlign="top" fxFlexFill class="log-tlo">
+  <mat-card fxFlex="100">
+    <mat-form-field>
+      <mat-label>Wyszukaj</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="" #input>
+    </mat-form-field>
+
+    <div class="na-tabele">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="nazwa">
+          <th mat-header-cell *matHeaderCellDef> Nazwa produktu </th>
+          <td mat-cell *matCellDef="let element"> {{element.nazwa}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="jednostka">
+          <th mat-header-cell *matHeaderCellDef> Jednostka </th>
+          <td mat-cell *matCellDef="let element"> {{element.jednostka}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="ilosc">
+          <th mat-header-cell *matHeaderCellDef> Ilość w magazynie </th>
+          <td mat-cell *matCellDef="let element"> {{element.ilosc}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="cena">
+          <th mat-header-cell *matHeaderCellDef> Cena </th>
+          <td mat-cell *matCellDef="let element"> {{element.cena}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="wartosc">
+          <th mat-header-cell *matHeaderCellDef> Wartość </th>
+          <td mat-cell *matCellDef="let element"> {{element.wartosc}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+
+    <div class="example-container">
+      <h1 style="color:greenyellow">Dodaj, usuń lub edytuj produkty:</h1>
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Nazwa produktu" type="text" name="nazwa" [(ngModel)]="nazwa">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Jednostka</mat-label>
+        <select matNativeControl [(ngModel)]="jednostka">
+          <option value="szt">Sztuki</option>
+          <option value="kg">Kilogramy</option>
+          <option value="g">Gramy</option>
+          <option value="l">Litry</option>
+          <option value="ml">Mililitry</option>
+        </select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Cena za jednostkę" type="text" name="cena" [(ngModel)]="cena">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Ilość" type="text" name="ilosc" [(ngModel)]="ilosc">
+      </mat-form-field>
+
+    </div>
+    <div class="przyciski">
+      <button mat-raised-button color="primary" type="submit"  (click)="dodaj_metoda()" class="przycisk-dodaj">Dodaj nowy produkt do magazynu</button>
+      <button mat-raised-button color="primary" type="submit"  (click)="usun_metoda()" class="przycisk-usun">Usuń produkt po nazwie</button>
+      <button mat-raised-button color="primary" type="submit"  (click)="edytuj_metoda()" class="przycisk-edytuj">Edytuj produkt po nazwie</button>
+    </div>
+
+    <div class="example-container">
+      <h1 style="color:greenyellow">Zamów lub redukuj stan magazynu:</h1>
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Nazwa produktu" type="text" name="nazwa" [(ngModel)]="nazwa">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Ilość" type="text" name="ilosc" [(ngModel)]="ilosc">
+      </mat-form-field>
+
+    </div>
+    <div class="przyciski">
+      <button mat-raised-button color="primary" type="submit"  (click)="zamow()" class="przycisk-dodaj">Zamów produkt</button>
+      <button mat-raised-button color="primary" type="submit"  (click)="odejmij()" class="przycisk-usun">Odejmij produkt</button>
+    </div>
+
+  </mat-card>
+</div>

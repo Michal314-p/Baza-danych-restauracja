@@ -1,0 +1,19 @@
+<div fxLayoutAlign="center" fxFlexFill class="menu-tlo">
+  <mat-card fxFlex="100">
+    <div fxLayoutAlign="center center" fxFlexFill class="log-karta">
+      <mat-card fxFlex="40">
+        <mat-list role="list" *ngFor="let Dane_restauracja of users">
+          <mat-list-item role="listitem"><mat-icon color="warn"> local_dining</mat-icon>Nazwa Restauracji: <div style="color:greenyellow">{{Dane_restauracja.nazwa}}</div></mat-list-item>
+          <mat-list-item role="listitem"><mat-icon color="warn"> person_pin</mat-icon>Właściciel: <div style="color:greenyellow">{{Dane_restauracja.wlasciciel}}</div></mat-list-item>
+          <mat-list-item role="listitem"><mat-icon color="warn">home</mat-icon>Miasto: <div style="color:greenyellow">{{Dane_restauracja.miasto}}</div></mat-list-item>
+          <mat-list-item role="listitem"><mat-icon color="warn"> map</mat-icon>Lokalizacja: <div style="color:greenyellow">{{Dane_restauracja.lokalizacja}}</div></mat-list-item>
+          <mat-list-item role="listitem"><mat-icon color="warn">query_builder</mat-icon>Godziny otwarcia: <div style="color:greenyellow">{{Dane_restauracja.godziny_otwarcia}}</div></mat-list-item>
+          <mat-list-item role="listitem"><mat-icon color="warn">network_wifi</mat-icon>Wifi: <div style="color:greenyellow">{{Dane_restauracja.wifi}}</div></mat-list-item>
+          <mat-list-item role="listitem"><mat-icon color="warn"> table_chart</mat-icon>Ilość stolików: <div style="color:greenyellow">{{Dane_restauracja.ilosc_stolikow}}</div></mat-list-item>
+          <mat-list-item role="listitem"><mat-icon color="warn">star</mat-icon>Rodzaj kuchni: <div style="color:greenyellow">{{Dane_restauracja.rodzaj_kuchni}}</div></mat-list-item>
+        </mat-list>
+      </mat-card>
+    </div>
+  </mat-card>
+</div>
+

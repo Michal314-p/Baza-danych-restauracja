@@ -1,0 +1,8 @@
+
+.log-karta mat-card {
+  padding: 1%;
+}
+
+.przycisk-logowanie mat-button {
+  padding: 8px 8px 8px 0;
+}
