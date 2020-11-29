@@ -1,26 +1,84 @@
 <div class="log-lt">
   <mat-card class="r">
+    <mat-list role="list" *ngFor="let Dane_dochod of dane2">
+      <mat-list-item role="listitem">Całkowity dochód: <div style="color:greenyellow">{{Dane_dochod.suma}}</div></mat-list-item>
+    </mat-list>
 
-    <div class="ikona-dolar"> <mat-icon >attach_money</mat-icon> Całkowity dochód:</div>
-    <div class="napis1" style="color:greenyellow">100 zł</div>
+    <h3>
+      <img class="obrazek" src="/assets/images/income.png" width="30%" height="30%">
+    </h3>
   </mat-card>
 </div>
 
 <div  class="log-rt">
   <mat-card class="r">
-
   </mat-card>
 </div>
 
 <div class="log-lb">
   <mat-card class="r">
 
+    <mat-list role="list" *ngFor="let Dane_dzienne of dane1">
+      <mat-list-item role="listitem"><mat-icon color="warn"> local_dining</mat-icon>Koszt pracowników: <div style="color:greenyellow">{{Dane_dzienne.koszt_pracownikow}}</div></mat-list-item>
+      <mat-list-item role="listitem"><mat-icon color="warn"> person_pin</mat-icon>Koszt pojazdów: <div style="color:greenyellow">{{Dane_dzienne.kosz_pojazdow}}</div></mat-list-item>
+      <mat-list-item role="listitem"><mat-icon color="warn">home</mat-icon>Koszt produktów: <div style="color:greenyellow">{{Dane_dzienne.koszt_produktow}}</div></mat-list-item>
+    </mat-list>
+
+    <div class="example-container">
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Dzienny dochód" type="text" name="nazwa" [(ngModel)]="suma">
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" (click)="dzienny_dochod()"  class="przycisk-dodaj">Zatwierdź</button>
+    </div>
+
+    <div class="example-container">
+      <h4>Dodatkowe wydatki:</h4>
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Cena" type="text" name="cena" [(ngModel)]="cena">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Opis" type="text" name="opis" [(ngModel)]="opis">
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" (click)="dodatkowe_wydatki()"  class="przycisk-dodaj">Zatwierdź</button>
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="rrrr-mm-dd" type="text" name="data" [(ngModel)]="data">
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" (click)="zatwierdz_koszta()"  class="przycisk-edytuj">Zatwierdź koszta</button>
+    </div>
   </mat-card>
 </div>
 
 <div  class="log-rb">
   <mat-card class="r">
+    <mat-form-field>
+      <mat-label>Wyszukaj</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="" #input>
+    </mat-form-field>
 
+    <div class="na-tabele">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="data">
+          <th mat-header-cell *matHeaderCellDef> Data </th>
+          <td mat-cell *matCellDef="let element"> {{element.data}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="opis">
+          <th mat-header-cell *matHeaderCellDef> Opis </th>
+          <td mat-cell *matCellDef="let element"> {{element.opis}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="cena">
+          <th mat-header-cell *matHeaderCellDef> Cena </th>
+          <td mat-cell *matCellDef="let element"> {{element.cena}} </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
   </mat-card>
 </div>
 

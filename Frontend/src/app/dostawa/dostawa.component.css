@@ -1,53 +1,15 @@
-.log-rt {
-  width: 49%;
-  height: 46%;
-  float: right;
-}
-
-.log-lt {
-  width: 49%;
-  height: 46%;
-  float: left;
-}
-
-
-
-.log-rb {
-  width: 49%;
-  height: 46%;
-  float: right;
-}
-
-.log-lb {
-  width: 49%;
-  height: 46%;
-  float: left;
-}
-
-.r {
-  height: 80%;
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-top: 5%;
-}
-
-.ikona-dolar
-{
-  color: #D6D91D;
-}
-
 table {
   width: 100%;
 }
 
 .na-tabele
 {
-  max-height: 300px;
+  height: 450px;
   overflow: auto;
 }
 
 .mat-form-field {
-  font-size: 9px;
+  font-size: 14px;
   width: 100%;
 }
 
@@ -56,15 +18,15 @@ table {
 }
 
 .example-container .mat-form-field {
-  width: 34%;
+  width: 15%;
 }
 
 .example-container form {
-  margin-bottom: 5px;
+  margin-bottom: 20px;
 }
 
 .example-container {
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .example-container form > * {
@@ -76,9 +38,9 @@ table {
 }
 
 .przycisk-dodaj {
-  width: 24%;
+  width: 250px;
   background-color: #4CAF50;
-  margin-left: 5px;
+  margin-right: 10px;
 }
 
 .przycisk-usun {
@@ -88,9 +50,7 @@ table {
 }
 
 .przycisk-edytuj {
-  width: 200px;
+  width: 250px;
   background-color: #2980B9;
-  margin: 0px 5px;
+  margin: 0px 10px;
 }
-
-

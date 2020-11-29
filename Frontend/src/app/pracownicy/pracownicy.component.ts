@@ -81,6 +81,6 @@ export class PracownicyComponent implements OnInit {
 
   resetuj_godziny()
   {
-    this.service.resetuj_godziny().subscribe(res=>{});
+    this.service.resetuj_godziny(this.id).subscribe(res=>{});
   }
 }

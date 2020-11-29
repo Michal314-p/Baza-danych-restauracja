@@ -36,14 +36,14 @@
           <td mat-cell *matCellDef="let element"> {{element.telefon}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="godziny">
-          <th mat-header-cell *matHeaderCellDef> Przepracowane godziny </th>
-          <td mat-cell *matCellDef="let element"> {{element.godziny}} </td>
+        <ng-container matColumnDef="etat">
+          <th mat-header-cell *matHeaderCellDef> Etat </th>
+          <td mat-cell *matCellDef="let element"> {{element.etat}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="stawka">
-          <th mat-header-cell *matHeaderCellDef> Stawka godzinowa </th>
-          <td mat-cell *matCellDef="let element"> {{element.stawka}} </td>
+        <ng-container matColumnDef="godziny">
+          <th mat-header-cell *matHeaderCellDef> Godziny do przepracowania </th>
+          <td mat-cell *matCellDef="let element"> {{element.godziny}} </td>
         </ng-container>
 
         <ng-container matColumnDef="wyplata">
@@ -57,7 +57,7 @@
     </div>
 
     <div class="example-container">
-      <h1 style="color:greenyellow">Dodaj, usuń lub edytuj pracowników:</h1>
+      <h2 style="color:greenyellow">Dodaj, usuń lub edytuj pracowników:</h2>
       <mat-form-field appearance="fill">
         <input matInput placeholder="Id" type="text" name="id" [(ngModel)]="id">
       </mat-form-field>
@@ -79,22 +79,22 @@
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <input matInput placeholder="Godziny" type="text" name="godziny" [(ngModel)]="godziny">
+        <input matInput placeholder="Etat" type="text" name="etat" [(ngModel)]="etat">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <input matInput placeholder="Stawka" type="text" name="stawka" [(ngModel)]="stawka">
+        <input matInput placeholder="Wypłata" type="text" name="wyplata" [(ngModel)]="wyplata">
       </mat-form-field>
 
     </div>
     <div class="przyciski">
-      <button mat-raised-button color="primary" type="submit"  (click)="dodaj()" class="przycisk-dodaj">Dodaj pracownika</button>
-      <button mat-raised-button color="primary" type="submit" (click)="usun()" class="przycisk-usun">Usuń po id</button>
-      <button mat-raised-button color="primary" type="submit" (click)="edytuj()"  class="przycisk-edytuj">Edytuj po id</button>
+      <button mat-raised-button color="primary" type="submit" (click)="dodaj_o_prace()"  class="przycisk-dodaj">Dodaj pracownika</button>
+      <button mat-raised-button color="primary" type="submit" (click)="usun_o_prace()" class="przycisk-usun">Usuń po id</button>
+      <button mat-raised-button color="primary" type="submit" (click)="edytuj_o_prace()" class="przycisk-edytuj">Edytuj po id</button>
     </div>
 
     <div class="example-container">
-      <h1 style="color:greenyellow">Dodaj usuń godziny pracowników:</h1>
+      <h2 style="color:greenyellow">Dodaj usuń godziny pracowników:</h2>
       <mat-form-field appearance="fill">
         <input matInput placeholder="Id" type="text" name="id" [(ngModel)]="id">
       </mat-form-field>
@@ -105,13 +105,22 @@
 
     </div>
     <div class="przyciski">
-      <button mat-raised-button color="primary" type="submit" (click)="dodaj_godziny()"  class="przycisk-dodaj">Dodaj</button>
-      <button mat-raised-button color="primary" type="submit" (click)="odejmij_godziny()"  class="przycisk-usun">Usun</button>
-      <button mat-raised-button color="primary" type="submit" (click)="resetuj_godziny()"  class="przycisk-resetuj">Resetuj wszystkie godziny</button>
+      <button mat-raised-button color="primary" type="submit" (click)="dodaj_godziny_o_prace()"  class="przycisk-dodaj">Dodaj</button>
+      <button mat-raised-button color="primary" type="submit"  (click)="odejmij_godziny_o_prace()" class="przycisk-usun">Usun</button>
+      <button mat-raised-button color="primary" type="submit"  (click)="resetuj_godziny_o_prace()" class="przycisk-resetuj">Resetuj wszystkie godziny</button>
     </div>
 
+    <div class="example-container">
+      <h2 style="color:greenyellow">Ustaw etat:</h2>
+
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Etat" type="text" name="godziny" [(ngModel)]="godziny">
+      </mat-form-field>
+
+    </div>
+    <div class="przyciski">
+      <button mat-raised-button color="primary" type="submit" (click)="ustaw_etat()"  class="przycisk-dodaj">Ustaw</button>
+    </div>
 
   </mat-card>
 </div>
-
-

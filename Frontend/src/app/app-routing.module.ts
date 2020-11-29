@@ -10,6 +10,8 @@ import { MapaComponent } from './mapa/mapa.component';
 import {KosztaComponent} from './koszta/koszta.component';
 import {PracownicyComponent} from './pracownicy/pracownicy.component';
 import {MagazynComponent} from './magazyn/magazyn.component';
+import {DostawaComponent} from './dostawa/dostawa.component';
+import {UmowaOPraceComponent} from './umowa-o-prace/umowa-o-prace.component';
 
 const routes: Routes = [
   {path: '', component: LandingPageComponent},
@@ -21,6 +23,8 @@ const routes: Routes = [
   {path: 'koszta', component:KosztaComponent},
   {path: 'pracownicy', component:PracownicyComponent},
   {path: 'magazyn', component:MagazynComponent},
+  {path: 'samochody', component:DostawaComponent},
+  {path: 'o_prace', component:UmowaOPraceComponent},
 
 ];
 

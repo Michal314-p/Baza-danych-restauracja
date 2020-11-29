@@ -31,6 +31,11 @@ import { KosztaComponent } from './koszta/koszta.component';
 import { PracownicyComponent } from './pracownicy/pracownicy.component';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { MagazynComponent } from './magazyn/magazyn.component';
+import { DostawaComponent } from './dostawa/dostawa.component';
+import { UmowaOPraceComponent } from './umowa-o-prace/umowa-o-prace.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {DialogDostawaComponent} from './dostawa/dialog-dostawa/dialog-dostawa.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 @NgModule({
@@ -45,6 +50,9 @@ import { MagazynComponent } from './magazyn/magazyn.component';
     KosztaComponent,
     PracownicyComponent,
     MagazynComponent,
+    DostawaComponent,
+    UmowaOPraceComponent,
+    DialogDostawaComponent,
 
   ],
   imports: [
@@ -65,12 +73,15 @@ import { MagazynComponent } from './magazyn/magazyn.component';
     LayoutModule,
     MatSlideToggleModule,
     MatSelectModule,
+    MatDialogModule,
+    MatDatepickerModule,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
     }),
     AgmCoreModule.forRoot({apiKey:'AIzaSyCPr7B04oPNyzMSE4HEv80ESthv4Vdfefs'})
   ],
   providers: [RestAppService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DialogDostawaComponent],
 })
 export class AppModule { }

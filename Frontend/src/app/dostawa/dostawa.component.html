@@ -1,0 +1,94 @@
+<div fxLayoutAlign="top" fxFlexFill class="log-tlo">
+  <mat-card fxFlex="100">
+    <mat-form-field>
+      <mat-label>Wyszukaj</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="" #input>
+    </mat-form-field>
+
+    <div class="na-tabele">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> ID </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="pojazd">
+          <th mat-header-cell *matHeaderCellDef> Typ pojazdu </th>
+          <td mat-cell *matCellDef="let element"> {{element.pojazd}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="marka">
+          <th mat-header-cell *matHeaderCellDef> Marka </th>
+          <td mat-cell *matCellDef="let element"> {{element.marka}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="spalanie">
+          <th mat-header-cell *matHeaderCellDef> Spalanie </th>
+          <td mat-cell *matCellDef="let element"> {{element.spalanie}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="koszt">
+          <th mat-header-cell *matHeaderCellDef> Koszt paliwa </th>
+          <td mat-cell *matCellDef="let element"> {{element.koszt}} </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+
+    <div class="example-container">
+      <h1 style="color:greenyellow">Dodaj, usuń lub edytuj pojazdy:</h1>
+
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Id" type="text" name="id" [(ngModel)]="id">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Typ pojazdu" type="text" name="pojazd" [(ngModel)]="pojazd">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Marka" type="text" name="marka" [(ngModel)]="marka">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Spalanie" type="text" name="spalanie" [(ngModel)]="spalanie">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Koszt" type="text" name="koszt" [(ngModel)]="koszt">
+      </mat-form-field>
+
+    </div>
+    <div class="przyciski">
+      <button mat-raised-button color="primary" type="submit" (click)="dodaj_pojazd()" class="przycisk-dodaj">Dodaj pojazd</button>
+      <button mat-raised-button color="primary" type="submit" (click)="usun_pojazd()" class="przycisk-usun">Usuń pojazd</button>
+      <button mat-raised-button color="primary" type="submit" (click)="edytuj_pojazd()" class="przycisk-edytuj">Edytuj pojazd</button>
+    </div>
+
+    <div class="example-container">
+      <h1 style="color:greenyellow">Dodaj, usuń koszty paliwa:</h1>
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Id" type="text" name="id" [(ngModel)]="id">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Litry" type="text" name="spalanie" [(ngModel)]="spalanie">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Cena paliwa" type="text" name="koszt" [(ngModel)]="koszt">
+      </mat-form-field>
+
+    </div>
+    <div class="przyciski">
+      <button mat-raised-button color="primary" type="submit"  (click)="rachunek_paliwo()" class="przycisk-dodaj">Dodaj</button>
+      <button mat-raised-button color="primary" type="submit"  (click)="reset_paliwo()" class="przycisk-usun">Resetuj</button>
+    </div>
+
+  </mat-card>
+</div>
+
+
