@@ -24,31 +24,40 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `magazyn`
+-- Struktura tabeli dla tabeli `etat`
 --
 
-CREATE TABLE `magazyn` (
-  `login` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `nazwa` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `jednostka` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `ilosc` double NOT NULL,
-  `cena` double NOT NULL
+CREATE TABLE `etat` (
+  `id` int(11) NOT NULL,
+  `etat` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Zrzut danych tabeli `magazyn`
+-- Zrzut danych tabeli `etat`
 --
 
-INSERT INTO `magazyn` (`login`, `nazwa`, `jednostka`, `ilosc`, `cena`) VALUES
-('michal', 'Mleko', 'szt', 6, 100),
-('michal', 'Cebula', 'szt', 114.5, 1.75),
-('michal', 'Banany', 'kg', 11, 12),
-('michal', 'Arbuzy', 'szt', 25, 5.99),
-('michal', 'Coca Cola 0.33l', 'szt', 5, 2.1),
-('michal', 'Cukier', 'kg', 12, 5),
-('michal', 'Tabasco', 'ml', 100, 0.33),
-('michal', 'Sos BBQ Fanex', 'szt', 8, 12.5),
-('michal', 'Ziemniaki', 'kg', 12, 4.99);
+INSERT INTO `etat` (`id`, `etat`) VALUES
+(1, 120);
+
+--
+-- Indeksy dla zrzutów tabel
+--
+
+--
+-- Indeksy dla tabeli `etat`
+--
+ALTER TABLE `etat`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT dla tabeli `etat`
+--
+ALTER TABLE `etat`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -24,31 +24,46 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `magazyn`
+-- Struktura tabeli dla tabeli `dodatkowe_koszty`
 --
 
-CREATE TABLE `magazyn` (
-  `login` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `nazwa` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `jednostka` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `ilosc` double NOT NULL,
+CREATE TABLE `dodatkowe_koszty` (
+  `id` int(11) NOT NULL,
+  `data` text NOT NULL,
+  `opis` text NOT NULL,
   `cena` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Zrzut danych tabeli `magazyn`
+-- Zrzut danych tabeli `dodatkowe_koszty`
 --
 
-INSERT INTO `magazyn` (`login`, `nazwa`, `jednostka`, `ilosc`, `cena`) VALUES
-('michal', 'Mleko', 'szt', 6, 100),
-('michal', 'Cebula', 'szt', 114.5, 1.75),
-('michal', 'Banany', 'kg', 11, 12),
-('michal', 'Arbuzy', 'szt', 25, 5.99),
-('michal', 'Coca Cola 0.33l', 'szt', 5, 2.1),
-('michal', 'Cukier', 'kg', 12, 5),
-('michal', 'Tabasco', 'ml', 100, 0.33),
-('michal', 'Sos BBQ Fanex', 'szt', 8, 12.5),
-('michal', 'Ziemniaki', 'kg', 12, 4.99);
+INSERT INTO `dodatkowe_koszty` (`id`, `data`, `opis`, `cena`) VALUES
+(1, '2020-11-18', 'Naprawa zmywarki', 350),
+(2, '2020-11-24', 'Kupno drukarki', 120.5),
+(3, '2020-11-25', 'Zamówienie plakatu', 100),
+(4, '2020-11-30', 'Naprawa skutera', 100),
+(5, '2020-12-12', 'Naprawa skutera', 123);
+
+--
+-- Indeksy dla zrzutów tabel
+--
+
+--
+-- Indeksy dla tabeli `dodatkowe_koszty`
+--
+ALTER TABLE `dodatkowe_koszty`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT dla tabeli `dodatkowe_koszty`
+--
+ALTER TABLE `dodatkowe_koszty`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 15 Lis 2020, 14:37
+-- Czas generowania: 14 Gru 2020, 17:15
 -- Wersja serwera: 10.4.14-MariaDB
 -- Wersja PHP: 7.4.9
 
@@ -43,12 +43,11 @@ CREATE TABLE `pracownicy` (
 --
 
 INSERT INTO `pracownicy` (`id`, `login`, `imie`, `nazwisko`, `stanowisko`, `telefon`, `godziny`, `stawka`) VALUES
-(1, 'michal', 'Janusz', 'Deska', 'Kelner', 567892345, 4, 17.2),
-(2, 'michal', 'Gabriel', 'Sternik', 'Manager', 567828888, 76.5, 23.6),
-(3, 'michal', 'Olaf', 'Stok', 'Kucharz', 567900222, 67.45, 20.8),
-(4, 'michal', 'Anastazja', 'Kopek', 'Kelner', 234512344, 120, 17.6),
-(5, 'michal', 'Mariusz', 'Tenor', 'Kucharz', 234670982, 140.7, 22.8),
-(13, 'michal', 'Janusz', 'Wiesio', 'Sztygar', 1234455, 0, 12);
+(1, 'michal', 'Jan', 'Deska', 'Kelner', 567892345, 45, 17.2),
+(2, 'michal', 'Michał', 'Sternik', 'Manager', 567828888, 0, 23.6),
+(4, 'michal', 'Anastazja', 'Kopek', 'Kelner', 234512344, 0, 17.6),
+(5, 'michal', 'Mariusz', 'Tenor', 'Kucharz', 234670982, 0, 22.8),
+(14, 'michal', 'Eliasz', 'Bas', 'Kucharz', 123456, 111, 1);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -68,7 +67,7 @@ ALTER TABLE `pracownicy`
 -- AUTO_INCREMENT dla tabeli `pracownicy`
 --
 ALTER TABLE `pracownicy`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 15 Lis 2020, 14:38
+-- Czas generowania: 14 Gru 2020, 17:13
 -- Wersja serwera: 10.4.14-MariaDB
 -- Wersja PHP: 7.4.9
 
@@ -31,6 +31,13 @@ CREATE TABLE `calkowity_dochod` (
   `login` text NOT NULL,
   `suma` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Zrzut danych tabeli `calkowity_dochod`
+--
+
+INSERT INTO `calkowity_dochod` (`login`, `suma`) VALUES
+('michal', 22472.6);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

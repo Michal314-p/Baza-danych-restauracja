@@ -24,36 +24,37 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `uzytkownicy`
+-- Struktura tabeli dla tabeli `o_prace`
 --
 
-CREATE TABLE `uzytkownicy` (
+CREATE TABLE `o_prace` (
   `id` int(11) NOT NULL,
-  `login` text NOT NULL,
-  `haslo` text NOT NULL
+  `imie` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
+  `nazwisko` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
+  `stanowisko` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
+  `telefon` int(11) NOT NULL,
+  `etat` double NOT NULL,
+  `godziny` double NOT NULL,
+  `wyplata` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Zrzut danych tabeli `uzytkownicy`
+-- Zrzut danych tabeli `o_prace`
 --
 
-INSERT INTO `uzytkownicy` (`id`, `login`, `haslo`) VALUES
-(1, 'michal', 'anar'),
-(2, 'asd', 'sssss'),
-(3, 'das', 'sddsdssssss'),
-(4, 'michal', 'sddsdssssss'),
-(12, 'ssssssss', 'ssssssssssss'),
-(13, 'Andrzej', 'boczek'),
-(14, 'Nikita', 'golota');
+INSERT INTO `o_prace` (`id`, `imie`, `nazwisko`, `stanowisko`, `telefon`, `etat`, `godziny`, `wyplata`) VALUES
+(1, 'Asar', 'Ed', 'Właściciel', 123404503, 1, 120, 3500),
+(4, 'Nork', 'Sett', 'Manager', 123444, 1, 120, 1400),
+(9, 'Jan', 'Kowalski', 'Kelner', 2123313, 0.25, 30, 1000);
 
 --
 -- Indeksy dla zrzutów tabel
 --
 
 --
--- Indeksy dla tabeli `uzytkownicy`
+-- Indeksy dla tabeli `o_prace`
 --
-ALTER TABLE `uzytkownicy`
+ALTER TABLE `o_prace`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -61,10 +62,10 @@ ALTER TABLE `uzytkownicy`
 --
 
 --
--- AUTO_INCREMENT dla tabeli `uzytkownicy`
+-- AUTO_INCREMENT dla tabeli `o_prace`
 --
-ALTER TABLE `uzytkownicy`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+ALTER TABLE `o_prace`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

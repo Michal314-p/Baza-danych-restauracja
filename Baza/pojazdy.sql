@@ -24,36 +24,34 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `uzytkownicy`
+-- Struktura tabeli dla tabeli `pojazdy`
 --
 
-CREATE TABLE `uzytkownicy` (
+CREATE TABLE `pojazdy` (
   `id` int(11) NOT NULL,
-  `login` text NOT NULL,
-  `haslo` text NOT NULL
+  `pojazd` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
+  `marka` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
+  `spalanie` double NOT NULL,
+  `koszt` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Zrzut danych tabeli `uzytkownicy`
+-- Zrzut danych tabeli `pojazdy`
 --
 
-INSERT INTO `uzytkownicy` (`id`, `login`, `haslo`) VALUES
-(1, 'michal', 'anar'),
-(2, 'asd', 'sssss'),
-(3, 'das', 'sddsdssssss'),
-(4, 'michal', 'sddsdssssss'),
-(12, 'ssssssss', 'ssssssssssss'),
-(13, 'Andrzej', 'boczek'),
-(14, 'Nikita', 'golota');
+INSERT INTO `pojazdy` (`id`, `pojazd`, `marka`, `spalanie`, `koszt`) VALUES
+(1, 'Skuter', 'Audi', 43, 151),
+(3, 'Motor', 'Volvo', 0, 0),
+(4, 'Dostawczak', 'Mitsubishi A20', 0, 0);
 
 --
 -- Indeksy dla zrzutów tabel
 --
 
 --
--- Indeksy dla tabeli `uzytkownicy`
+-- Indeksy dla tabeli `pojazdy`
 --
-ALTER TABLE `uzytkownicy`
+ALTER TABLE `pojazdy`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -61,10 +59,10 @@ ALTER TABLE `uzytkownicy`
 --
 
 --
--- AUTO_INCREMENT dla tabeli `uzytkownicy`
+-- AUTO_INCREMENT dla tabeli `pojazdy`
 --
-ALTER TABLE `uzytkownicy`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+ALTER TABLE `pojazdy`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
