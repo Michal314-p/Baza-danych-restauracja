@@ -1,6 +1,6 @@
 package com.ibd;
 
-import com.mysql.cj.x.protobuf.MysqlxDatatypes;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
